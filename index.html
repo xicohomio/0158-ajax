@@ -3,7 +3,9 @@
 	
 	<body id="">
 			
-			<button name="aaaa" value="clica aqui" id="aaaa"></button>
+			<button name="aaaa"  id="aaaa">clica aqui</button>
+
+			<button name="bbbb"  id="bbbb">clica aqui</button>
 
 			<div class="result">
 				
@@ -13,13 +15,24 @@
 <script>
 		$( "#aaaa" ).click(function() {
 
-			orig ="http://www.franciscoribeiro.net/localidades.html";
-			
+		orig ="http://www.franciscoribeiro.net/localidades.html";
+
 		$.get( orig, function( data ) {
 		$( ".result" ).html( data );
 
 		});
 		});
+
+		$( "#bbbb" ).click(function() {
+			$.getJSON( "http://www.franciscoribeiro.net/loc.json", function( data ) {
+
+				$.each(data, function(key, val) {
+					$( ".resultjson" ).append('<h1>' + '::' + '</h1>');
+					
+				});
+		});
+		});
+
 
 </script>
 </html>
