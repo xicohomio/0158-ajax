@@ -12,7 +12,10 @@
 	</body>
 <script>
 		$( "#aaaa" ).click(function() {
-		$.get( "localidades.html", function( data ) {
+
+			orig ="http://www.franciscoribeiro.net/localidades.html";
+			
+		$.get( orig, function( data ) {
 		$( ".result" ).html( data );
 
 		});
